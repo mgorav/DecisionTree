@@ -16,11 +16,11 @@ def binaryYN(YN):
         return 0
 
 def mapDegree(degree):
-    if (degree == 'BSC'):
+    if degree == 'BSC':
         return 1
-    elif (degree =='MSC'):
+    elif degree =='MSC':
         return 2
-    elif (degree == 'PHD'):
+    elif degree == 'PHD':
         return 3
     else:
         return 0
