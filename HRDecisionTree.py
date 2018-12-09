@@ -51,7 +51,7 @@ csvData = rawData.map(lambda x: x.split(","))
 trainingData = csvData.map(createLabeledPoints)
 
 # Create a test candidate, with 10 years of experience, currently employed,
-# 3 previous employers, a BS degree, but from a non-top-tier school where
+# 3 previous employers, a BSC degree, but from a non-top-tier school where
 # he or she did not do an internship. You could of course load up a whole
 # huge RDD of test candidates from disk, too.
 testCandidates = [ array([10, 1, 3, 1, 0, 0])]
