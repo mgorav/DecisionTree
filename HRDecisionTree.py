@@ -29,7 +29,7 @@ def mapDegree(degree):
 # LabeledPoint that MLLib can use. All data must be numerical...
 def createLabeledPoints(fields):
     yearsExperience = int(fields[0])
-    employed = binary(fields[1])
+    employed = binaryYN(fields[1])
     previousEmployers = int(fields[2])
     educationLevel = mapDegree(fields[3])
     topTier = binaryYN(fields[4])
