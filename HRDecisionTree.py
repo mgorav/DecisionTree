@@ -9,18 +9,18 @@ sc = SparkContext(conf = conf)
 
 # Some functions that convert our CSV input data into numerical
 # features for each job candidate
-def binary(YN):
+def binaryYN(YN):
     if (YN == 'Y'):
         return 1
     else:
         return 0
 
-def mapEducation(degree):
-    if (degree == 'BS'):
+def mapDegree(degree):
+    if (degree == 'BSC'):
         return 1
-    elif (degree =='MS'):
+    elif (degree =='MSC'):
         return 2
-    elif (degree == 'PhD'):
+    elif (degree == 'PHD'):
         return 3
     else:
         return 0
@@ -31,10 +31,10 @@ def createLabeledPoints(fields):
     yearsExperience = int(fields[0])
     employed = binary(fields[1])
     previousEmployers = int(fields[2])
-    educationLevel = mapEducation(fields[3])
-    topTier = binary(fields[4])
-    interned = binary(fields[5])
-    hired = binary(fields[6])
+    educationLevel = mapDegree(fields[3])
+    topTier = binaryYN(fields[4])
+    interned = binaryYN(fields[5])
+    hired = binaryYN(fields[6])
 
     return LabeledPoint(hired, array([yearsExperience, employed,
         previousEmployers, educationLevel, topTier, interned]))
